@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+
+[sub_resource type="StreamTexture" id=2]
+
+[sub_resource type="StreamTexture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.686275, 0.14902, 0.780392, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0.368627, 0.113725, 0.611765, 0.6 )
+shadow_size = 5
+
+[resource]
+HSlider/icons/grabber = SubResource( 1 )
+HSlider/icons/grabber_disabled = SubResource( 2 )
+HSlider/icons/grabber_highlight = SubResource( 3 )
+HSlider/icons/tick = null
+HSlider/styles/focus = null
+HSlider/styles/grabber_area = SubResource( 4 )
+HSlider/styles/grabber_disabled = null
+HSlider/styles/grabber_highlight = null
+HSlider/styles/slider = null

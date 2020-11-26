@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/reggae.wav-f8f4aafe7487b7a2feed2b479bda13c5.sample"
+
+[deps]
+
+source_file="res://models/music/reggae.wav"
+dest_files=[ "res://.import/reggae.wav-f8f4aafe7487b7a2feed2b479bda13c5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

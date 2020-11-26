@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://entities/vfx/plus.png" type="Texture" id=1]
+[ext_resource path="res://entities/vfx/vfx.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 1
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.13092, 0.698242, 0.262778, 1, 0.218678, 0.948242, 0.0481529, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 1024
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.253165, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0113636 ), -1.49713, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+width = 128
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 90.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+size = Vector2( 0.25, 0.25 )
+
+[node name="Heal" type="Particles"]
+transform = Transform( -4.88762e-08, 0.3, 0, -0.3, -4.88762e-08, 0, 0, 0, 0.3, 0, 0.85, 0 )
+material_override = SubResource( 1 )
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+local_coords = false
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
+script = ExtResource( 2 )

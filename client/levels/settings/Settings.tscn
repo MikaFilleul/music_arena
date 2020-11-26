@@ -1,0 +1,627 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://levels/settings/settings.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=3]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=4]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=5]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=6]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=7]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=8]
+[ext_resource path="res://levels/commons/themes/leftAsidePanel.tres" type="Theme" id=9]
+[ext_resource path="res://levels/commons/themes/buttonAsideTheme.tres" type="Theme" id=10]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBold.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://levels/commons/themes/multiModeButton.tres" type="Theme" id=12]
+[ext_resource path="res://levels/commons/themes/rightPanel.tres" type="Theme" id=13]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-Regular.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://levels/commons/themes/settings_sliders.tres" type="Theme" id=15]
+[ext_resource path="res://levels/commons/anim/sceneFadeIn.tres" type="Animation" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 11 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 0.0859375, 0.717015, 1, 0.990068, 0.849416, 0.251384, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 14 )
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 1, 0.833374, 0.179688, 1, 0.664188, 0.148453, 0.808594, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = SubResource( 9 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="Gradient" id=11]
+colors = PoolColorArray( 0.519372, 0.035553, 0.568848, 1, 0.994629, 0.345789, 0.786797, 1 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fond" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="SettingsFullWindow" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsFullWindow"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 120
+
+[node name="header" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="SettingsFullWindow/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="SettingsFullWindow/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="SettingsFullWindow/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="Settings" type="Label" parent="SettingsFullWindow/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 130.0
+margin_right = 984.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Settings"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="SettingsFullWindow/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 864.0
+margin_right = 944.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="main" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="old" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 460.0
+size_flags_vertical = 3
+
+[node name="AsideMenu" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer/main/old"]
+margin_right = 221.0
+margin_bottom = 440.0
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="AsideDetails" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer/main/old"]
+margin_left = 225.0
+margin_right = 984.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="settingsContainer" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 460.0
+
+[node name="AsideMenu" type="Panel" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer"]
+margin_right = 180.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 180, 0 )
+theme = ExtResource( 9 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listButton" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 410.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Audio" type="Button" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_right = 180.0
+margin_bottom = 52.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 1 )
+text = "AUDIO"
+
+[node name="Jeu" type="Button" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_top = 56.0
+margin_right = 180.0
+margin_bottom = 108.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 1 )
+text = "GAME"
+
+[node name="Controle" type="Button" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_top = 112.0
+margin_right = 180.0
+margin_bottom = 164.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 1 )
+text = "CONTROLS"
+
+[node name="resetButton" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer"]
+margin_top = 414.0
+margin_right = 180.0
+margin_bottom = 440.0
+
+[node name="button" type="Button" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/resetButton"]
+margin_right = 180.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+theme = ExtResource( 12 )
+text = "RESET"
+
+[node name="AsideDetails" type="Panel" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer"]
+margin_left = 184.0
+margin_right = 984.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 13 )
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="content" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 760.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="scrollContainer" type="ScrollContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content"]
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer"]
+margin_right = 708.0
+margin_bottom = 342.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="listMenu" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer"]
+margin_right = 708.0
+margin_bottom = 342.0
+size_flags_horizontal = 3
+
+[node name="son" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+visible = false
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_right = 720.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Volume Settings"
+uppercase = true
+
+[node name="son" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 48.0
+margin_right = 720.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 5 )
+text = "SFX"
+
+[node name="son_slider" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 86.0
+margin_right = 720.0
+margin_bottom = 116.0
+
+[node name="textureound" type="TextureRect" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+texture = SubResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="sound" type="HSlider" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_left = 34.0
+margin_top = 7.0
+margin_right = 660.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 15 )
+ticks_on_borders = true
+
+[node name="percent" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_left = 664.0
+margin_top = 1.0
+margin_right = 720.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 5 )
+text = "0%"
+
+[node name="music" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 126.0
+margin_right = 720.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 5 )
+text = "Music"
+
+[node name="son_music" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 164.0
+margin_right = 720.0
+margin_bottom = 194.0
+
+[node name="texturemusic" type="TextureRect" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+texture = SubResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="music" type="HSlider" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_left = 34.0
+margin_top = 7.0
+margin_right = 660.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 15 )
+ticks_on_borders = true
+
+[node name="percent" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_left = 664.0
+margin_top = 1.0
+margin_right = 720.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 5 )
+text = "0%"
+
+[node name="controles" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+margin_right = 708.0
+margin_bottom = 342.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_right = 708.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 5 )
+text = "Control Settings"
+uppercase = true
+
+[node name="music" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 48.0
+margin_right = 708.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 5 )
+text = "Key-bindings"
+
+[node name="touches" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 86.0
+margin_right = 708.0
+margin_bottom = 114.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches"]
+margin_right = 53.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Left :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches"]
+margin_left = 57.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Q"
+
+[node name="touches2" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 124.0
+margin_right = 708.0
+margin_bottom = 152.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches2"]
+margin_right = 72.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Right :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches2"]
+margin_left = 76.0
+margin_right = 94.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "D"
+
+[node name="touches3" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 162.0
+margin_right = 708.0
+margin_bottom = 190.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches3"]
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Jump :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches3"]
+margin_left = 79.0
+margin_right = 195.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Z or Space"
+
+[node name="touches4" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 200.0
+margin_right = 708.0
+margin_bottom = 228.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches4"]
+margin_right = 84.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Punch :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches4"]
+margin_left = 88.0
+margin_right = 261.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Mouse Button 1"
+
+[node name="touches5" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 238.0
+margin_right = 708.0
+margin_bottom = 266.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches5"]
+margin_right = 58.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Kick :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches5"]
+margin_left = 62.0
+margin_right = 240.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Mouse Button 2"
+
+[node name="touches6" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 276.0
+margin_right = 708.0
+margin_bottom = 304.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches6"]
+margin_right = 122.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Grab item :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches6"]
+margin_left = 126.0
+margin_right = 141.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "E"
+
+[node name="touches7" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 314.0
+margin_right = 708.0
+margin_bottom = 342.0
+
+[node name="son3" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches7"]
+margin_right = 85.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Emote :"
+
+[node name="son2" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches7"]
+margin_left = 89.0
+margin_right = 155.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+text = "Alt F4"
+
+[node name="jeu" type="VBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+visible = false
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_right = 720.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 5 )
+text = "Game Settings"
+uppercase = true
+
+[node name="anim" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 48.0
+margin_right = 720.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 5 )
+text = "Desactivate animations"
+
+[node name="animToggle" type="CheckButton" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 86.0
+margin_right = 76.0
+margin_bottom = 126.0
+size_flags_horizontal = 2
+custom_constants/check_vadjust = 0
+
+[node name="pleinecran" type="Label" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 136.0
+margin_right = 720.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 5 )
+text = "Full screen mode"
+
+[node name="ecranToggle" type="CheckButton" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 174.0
+margin_right = 76.0
+margin_bottom = 214.0
+size_flags_horizontal = 2
+
+[node name="BottomButtons" type="HBoxContainer" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content"]
+margin_top = 334.0
+margin_right = 720.0
+margin_bottom = 360.0
+alignment = 2
+
+[node name="apply" type="Button" parent="SettingsFullWindow/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/BottomButtons"]
+margin_left = 626.0
+margin_right = 720.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 12 )
+text = "  APPLY  "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsFullWindow"]
+autoplay = "fade in"
+"anims/fade in" = ExtResource( 16 )

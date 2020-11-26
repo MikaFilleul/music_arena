@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/angela54.png-12f971bf56738f36e3db8fd95ebddae1.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://levels/selectChar/assets/char3/angela54.png"
+dest_files=[ "res://.import/angela54.png-12f971bf56738f36e3db8fd95ebddae1.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

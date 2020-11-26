@@ -1,0 +1,274 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://levels/test/game.gd" type="Script" id=1]
+[ext_resource path="res://levels/test/Map.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 64.8141, 34.5413, 6.67928 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.94902, 0.133333, 0.0470588, 0.784314 )
+distance_fade_mode = 1
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 10.0
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.94902, 0.133333, 0.0470588, 0.784314 )
+distance_fade_mode = 1
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 10.0
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 51.7132, 26.0731, 10.6341 )
+
+[node name="game" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08, 22.8 )
+fov = 30.0
+
+[node name="Map" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="spawnCollection" type="Spatial" parent="."]
+
+[node name="spawn1" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.3851e-10, 1, 0, -2.6077e-08, 0, 1, -34.6373, 12.5469, 0 )
+
+[node name="spawn2" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, -37.389, 6.09768, 0 )
+
+[node name="spawn3" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.34872e-10, 1, 0, -2.42144e-08, 0, 1, -41.128, -1.76536, 0 )
+
+[node name="spawn4" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -42.611, -7.90699, 0 )
+
+[node name="spawn5" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -40.4679, -14.992, 0 )
+
+[node name="spawn6" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -34.7281, -11.1715, 0 )
+
+[node name="spawn7" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -34.082, -18.8123, 0 )
+
+[node name="spawn8" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -24.756, -18.6459, 0 )
+
+[node name="spawn9" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, -28.03, -14.178, 0 )
+
+[node name="spawn10" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -17.6637, -12.6566, 0 )
+
+[node name="spawn11" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -13.6147, -20.8064, 0 )
+
+[node name="spawn12" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -34.0676, -5.40656, 0 )
+
+[node name="spawn13" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -29.773, 1.59014, 0 )
+
+[node name="spawn14" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -29.2402, 7.83257, 0 )
+
+[node name="spawn15" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -20.817, -6.06842, 0 )
+
+[node name="spawn16" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -18.669, 0.466722, 0 )
+
+[node name="spawn17" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, -14.12, 8.44871, 0 )
+
+[node name="spawn18" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -20.807, 8.59542, 0 )
+
+[node name="spawn19" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -26.191, 17.4579, 0 )
+
+[node name="spawn20" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -20.879, 17.6147, 0 )
+
+[node name="spawn21" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, -10.6348, 18.3811, 0 )
+
+[node name="spawn22" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -6.63466, 11.5825, 0 )
+
+[node name="spawn23" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, -8.16122, 5.70587, 0 )
+
+[node name="spawn24" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -13.004, -8.25413, 0 )
+
+[node name="spawn25" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -6.21352, -22.578, 0 )
+
+[node name="spawn26" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 1.01595, -23.0162, 0 )
+
+[node name="spawn27" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 8.71135, -20.9303, 0 )
+
+[node name="spawn28" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 11.8429, -15.2317, 0 )
+
+[node name="spawn29" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 8.26875, -8.97386, 0 )
+
+[node name="spawn30" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.3851e-10, 1, 0, -2.6077e-08, 0, 1, 4.71306, -15.0415, 0 )
+
+[node name="spawn31" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -6.94854e-10, 1, 0, -7.45058e-09, 0, 1, 0.0494289, -8.91356, 0 )
+
+[node name="spawn32" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, -10.8696, -14.9825, 0 )
+
+[node name="spawn33" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -2.70131, -12.6777, 0 )
+
+[node name="spawn34" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -6.94854e-10, 1, 0, -7.45058e-09, 0, 1, 0.315, 0.766566, 0 )
+
+[node name="spawn35" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, -7.987, 0.226953, 0 )
+
+[node name="spawn36" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 6.987, 0.257175, 0 )
+
+[node name="spawn37" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, 2.24382, 8.77949, 0 )
+
+[node name="spawn38" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 9.3703, 5.16259, 0 )
+
+[node name="spawn39" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, -3.81811, 19.6664, 0 )
+
+[node name="spawn40" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 4.66321, 21.6091, 0 )
+
+[node name="spawn41" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 2.64021, 18.2201, 0 )
+
+[node name="spawn42" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 5.78274, 16.0341, 0 )
+
+[node name="spawn43" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 7.98103, 19.3477, 0 )
+
+[node name="spawn44" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 14.9836, 11.8395, 0 )
+
+[node name="spawn45" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 17.9586, 16.7634, 0 )
+
+[node name="spawn46" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, 17.999, 5.95311, 0 )
+
+[node name="spawn47" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 22.9518, 8.77481, 0 )
+
+[node name="spawn48" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 28.795, 5.83977, 0 )
+
+[node name="spawn49" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 26.6347, 15.4571, 0 )
+
+[node name="spawn50" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 30.8507, 15.5903, 0 )
+
+[node name="spawn51" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, 37.286, 15.5328, 0 )
+
+[node name="spawn52" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 43.7529, 12.504, 0 )
+
+[node name="spawn53" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 36.9867, 9.53306, 0 )
+
+[node name="spawn54" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -6.94854e-10, 1, 0, -7.45058e-09, 0, 1, 45.998, 6.3073, 0 )
+
+[node name="spawn55" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 38.238, 3.58425, 0 )
+
+[node name="spawn56" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 44.802, 0.720633, 0 )
+
+[node name="spawn57" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 16.286, -0.712419, 0 )
+
+[node name="spawn58" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 32.684, -0.630131, 0 )
+
+[node name="spawn59" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.45786e-10, 1, 0, -2.98023e-08, 0, 1, 17.96, -6.17896, 0 )
+
+[node name="spawn60" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 21.216, -4.20675, 0 )
+
+[node name="spawn61" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 25.9362, -6.2947, 0 )
+
+[node name="spawn62" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 26.176, -2.47636, 0 )
+
+[node name="spawn63" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.3851e-10, 1, 0, -2.6077e-08, 0, 1, 33.6412, -8.89973, 0 )
+
+[node name="spawn64" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 42.1023, -11.0738, 0 )
+
+[node name="spawn65" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 50.9602, -8.24533, 0 )
+
+[node name="spawn66" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.13044e-10, 1, 0, -1.49012e-08, 0, 1, 24.3208, -12.1636, 0 )
+
+[node name="spawn67" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 17.1953, -19.2009, 0 )
+
+[node name="spawn68" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.31234e-10, 1, 0, -2.23517e-08, 0, 1, 35.804, -15.6536, 0 )
+
+[node name="spawn69" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.0213e-10, 1, 0, -1.11759e-08, 0, 1, 28.165, -19.433, 0 )
+
+[node name="spawn70" type="Position3D" parent="spawnCollection"]
+transform = Transform( 1, -5.16593e-10, 0, -7.2032e-10, 1, 0, -1.86265e-08, 0, 1, 22.659, -19.0075, 0 )
+
+[node name="killingFallArea" type="Area" parent="."]
+
+[node name="SafeShape" type="CollisionShape" parent="killingFallArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3246, 2.06722, 0 )
+shape = SubResource( 1 )
+
+[node name="DangerZone" type="CSGBox" parent="killingFallArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.325, 2.067, 0 )
+width = 234.386
+height = 158.28
+depth = 58.561
+material = SubResource( 2 )
+
+[node name="SafeZone" type="CSGBox" parent="killingFallArea/DangerZone"]
+operation = 2
+width = 129.224
+height = 68.7258
+depth = 59.728
+material = SubResource( 3 )
+
+[node name="islandFallArea" type="Area" parent="."]
+
+[node name="islandsShape" type="CollisionShape" parent="islandFallArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.325, -2.203, 0 )
+shape = SubResource( 4 )
+
+[node name="itemCollection" type="Spatial" parent="."]
+[connection signal="body_exited" from="killingFallArea" to="." method="_on_killingFallArea_body_exited"]
+[connection signal="body_exited" from="islandFallArea" to="." method="_on_islandFallArea_body_exited"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://entities/characters/Class1/class1.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.176075, 0.674417, 0.351434 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[node name="player" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0033226, -0.0126846, 0.0060811 )
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="collisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678055, 0 )
+shape = SubResource( 1 )
+
+[node name="model" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67638e-08, 0 )
+
+[node name="body" type="MeshInstance" parent="model"]
+transform = Transform( 0.174564, 0, 0, 0, 0.532433, 0, 0, 0, 0.360351, 0, 0.545559, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="head" type="MeshInstance" parent="model"]
+transform = Transform( 0.177349, 0, 0, 0, 0.177349, 0, 0, 0, 0.177349, 0, 1.19631, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="punchHitArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.640341, 0, 0, 0, 1, 0, 0.892016, 0 )
+visible = false
+monitoring = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="punchMesh" type="MeshInstance" parent="punchHitArea"]
+transform = Transform( 0.130706, 0, 0, 0, 0.179953, 0, 0, 0, 0.320349, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="punchCollider" type="CollisionShape" parent="punchHitArea"]
+transform = Transform( 0.130706, 0, 0, 0, 0.179953, 0, 0, 0, 0.320349, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="kickHitArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.730753, 0 )
+visible = false
+monitoring = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="kickMesh" type="MeshInstance" parent="kickHitArea"]
+transform = Transform( 0.130706, 0, 0, 0, 0.115231, 0, 0, 0, 0.320349, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="kickCollider" type="CollisionShape" parent="kickHitArea"]
+transform = Transform( 0.130706, 0, 0, 0, 0.115231, 0, 0, 0, 0.320349, 0, 0.161263, 0 )
+shape = SubResource( 6 )
+
+[node name="jumpHitArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702563, 0 )
+visible = false
+monitoring = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="jumpMesh" type="MeshInstance" parent="jumpHitArea"]
+transform = Transform( 0.311816, 0, 0, 0, 0.115231, 0, 0, 0, 0.320349, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="jumpCollider" type="CollisionShape" parent="jumpHitArea"]
+transform = Transform( 0.311816, 0, 0, 0, 0.115231, 0, 0, 0, 0.320349, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="attackTween" type="Tween" parent="."]
+[connection signal="body_entered" from="punchHitArea" to="." method="_on_punchHitArea_body_entered"]
+[connection signal="body_entered" from="kickHitArea" to="." method="_on_kickHitArea_body_entered"]
+[connection signal="body_entered" from="jumpHitArea" to="." method="_on_jumpHitArea_body_entered"]

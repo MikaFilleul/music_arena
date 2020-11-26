@@ -1,0 +1,811 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://levels/hud/hud.gd" type="Script" id=1]
+[ext_resource path="res://levels/hud/hudListPlayers.tres" type="StyleBox" id=2]
+[ext_resource path="res://levels/hud/assets/backgdListPlayers.png" type="Texture" id=3]
+[ext_resource path="res://models/listPlayer/fibre-font.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://models/listPlayer/themes_sliderContainer.tres" type="Theme" id=5]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-Regular.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://levels/hud/pseudo_hud.gd" type="Script" id=8]
+[ext_resource path="res://levels/commons/themes/mostPlayedCharaTitle.tres" type="Theme" id=9]
+[ext_resource path="res://levels/hud/hp_hud.gd" type="Script" id=10]
+[ext_resource path="res://levels/hudSettings/hudsettings.gd" type="Script" id=11]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=12]
+[ext_resource path="res://levels/commons/themes/multiModeButton.tres" type="Theme" id=13]
+[ext_resource path="res://levels/commons/themes/buttonAsideTheme.tres" type="Theme" id=14]
+[ext_resource path="res://levels/commons/themes/leftAsidePanel.tres" type="Theme" id=15]
+[ext_resource path="res://levels/commons/themes/rightPanel.tres" type="Theme" id=16]
+[ext_resource path="res://levels/hud/pic_hud.gd" type="Script" id=17]
+[ext_resource path="res://levels/hud/assets/hud_bg1.png" type="Texture" id=18]
+[ext_resource path="res://levels/hud/assets/hud_bg2.png" type="Texture" id=19]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+
+[sub_resource type="StreamTexture" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+extra_spacing_char = 1
+extra_spacing_space = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 6 )
+
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 1, 0.0859375, 0.717015, 1, 0.990068, 0.849416, 0.251384, 1 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = SubResource( 7 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
+font_data = ExtResource( 7 )
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 1, 0.833374, 0.179688, 1, 0.664188, 0.148453, 0.808594, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = SubResource( 13 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="Gradient" id=15]
+colors = PoolColorArray( 0.519372, 0.035553, 0.568848, 1, 0.994629, 0.345789, 0.786797, 1 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 15 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = SubResource( 16 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg_hud2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -213.0
+margin_top = -214.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg_hud" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -206.0
+margin_right = 391.0
+rect_min_size = Vector2( 325, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 497.0
+margin_right = 1004.0
+margin_bottom = 590.0
+size_flags_vertical = 8
+
+[node name="bas" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 93.0
+
+[node name="stats" type="HBoxContainer" parent="MarginContainer/VBoxContainer/bas"]
+margin_right = 165.0
+margin_bottom = 93.0
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/bas/stats"]
+margin_right = 75.0
+margin_bottom = 93.0
+
+[node name="pic" type="TextureRect" parent="MarginContainer/VBoxContainer/bas/stats/VBoxContainer"]
+margin_right = 75.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 17 )
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/bas/stats/VBoxContainer"]
+margin_top = 79.0
+margin_right = 75.0
+margin_bottom = 93.0
+text = "Adonis_67"
+align = 1
+autowrap = true
+uppercase = true
+script = ExtResource( 8 )
+
+[node name="inventaire" type="TextureRect" parent="MarginContainer/VBoxContainer/bas/stats"]
+margin_left = 95.0
+margin_top = 21.0
+margin_right = 145.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource( 2 )
+expand = true
+
+[node name="obj" type="TextureRect" parent="MarginContainer/VBoxContainer/bas/stats/inventaire"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -17.5
+margin_top = -17.5
+margin_right = 17.5
+margin_bottom = 17.5
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="percent" type="Label" parent="MarginContainer/VBoxContainer/bas/stats"]
+margin_left = 165.0
+margin_top = 30.0
+margin_right = 165.0
+margin_bottom = 62.0
+theme = ExtResource( 9 )
+uppercase = true
+script = ExtResource( 10 )
+
+[node name="lastHit" type="HBoxContainer" parent="MarginContainer/VBoxContainer/bas"]
+margin_left = 884.0
+margin_right = 984.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/bas/lastHit"]
+margin_top = 21.0
+margin_right = 100.0
+margin_bottom = 71.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+
+[node name="last" type="Label" parent="MarginContainer/VBoxContainer/bas/lastHit/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 14.0
+text = "Kills:"
+
+[node name="kills" type="Label" parent="MarginContainer/VBoxContainer/bas/lastHit/VBoxContainer"]
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 50.0
+theme = ExtResource( 9 )
+text = "0"
+
+[node name="listPlayers" type="MarginContainer" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.831373 )
+light_mask = 1048575
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 80
+custom_constants/margin_top = 80
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 80
+
+[node name="Panel" type="Panel" parent="listPlayers"]
+show_behind_parent = true
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 944.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="listPlayers/Panel"]
+modulate = Color( 1, 1, 1, 0.54902 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="listPlayers/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="listPlayers/Panel/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 834.0
+margin_bottom = 410.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="listPlayers/Panel/MarginContainer/VBoxContainer"]
+margin_right = 804.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 4 )
+text = "PLAYER LIST"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="listPlayers/Panel/MarginContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 804.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+expand = true
+stretch_mode = 6
+
+[node name="playerContainer" type="ScrollContainer" parent="listPlayers/Panel/MarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 804.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+
+[node name="marginPlayer" type="MarginContainer" parent="listPlayers/Panel/MarginContainer/VBoxContainer/playerContainer"]
+margin_right = 804.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+
+[node name="playersList" type="VBoxContainer" parent="listPlayers/Panel/MarginContainer/VBoxContainer/playerContainer/marginPlayer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 789.0
+margin_bottom = 315.0
+custom_constants/separation = 10
+
+[node name="settings" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+script = ExtResource( 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settings"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 120
+
+[node name="header" type="HBoxContainer" parent="settings/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="settings/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="settings/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="settings/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="settings/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 76.0
+custom_constants/separation = 50
+
+[node name="Settings" type="Label" parent="settings/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 984.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 12 )
+text = "Settings"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="main" type="MarginContainer" parent="settings/VBoxContainer"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="settingsContainer" type="HBoxContainer" parent="settings/VBoxContainer/main"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 460.0
+
+[node name="AsideMenu" type="Panel" parent="settings/VBoxContainer/main/settingsContainer"]
+self_modulate = Color( 1, 1, 1, 0.862745 )
+margin_right = 180.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 180, 0 )
+theme = ExtResource( 15 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listButton" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 410.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Audio" type="Button" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_right = 180.0
+margin_bottom = 52.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+custom_fonts/font = SubResource( 5 )
+text = "AUDIO"
+
+[node name="Jeu" type="Button" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_top = 56.0
+margin_right = 180.0
+margin_bottom = 108.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+custom_fonts/font = SubResource( 5 )
+text = "GAME"
+
+[node name="Controle" type="Button" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/listButton"]
+margin_top = 112.0
+margin_right = 180.0
+margin_bottom = 164.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+custom_fonts/font = SubResource( 5 )
+text = "CONTROLS"
+
+[node name="resetButton" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer"]
+margin_top = 414.0
+margin_right = 180.0
+margin_bottom = 440.0
+
+[node name="button" type="Button" parent="settings/VBoxContainer/main/settingsContainer/AsideMenu/VBoxContainer/resetButton"]
+margin_right = 180.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+theme = ExtResource( 13 )
+text = "RESET"
+
+[node name="AsideDetails" type="Panel" parent="settings/VBoxContainer/main/settingsContainer"]
+self_modulate = Color( 1, 1, 1, 0.862745 )
+margin_left = 184.0
+margin_right = 984.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 760.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="scrollContainer" type="ScrollContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content"]
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer"]
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="listMenu" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer"]
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+
+[node name="son" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_right = 720.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "Volume settings"
+uppercase = true
+
+[node name="son" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 48.0
+margin_right = 720.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 9 )
+text = "SFX"
+
+[node name="son_slider" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 86.0
+margin_right = 720.0
+margin_bottom = 116.0
+
+[node name="textureound" type="TextureRect" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+texture = SubResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="sound" type="HSlider" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_left = 34.0
+margin_top = 7.0
+margin_right = 660.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+ticks_on_borders = true
+
+[node name="percent" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_slider"]
+margin_left = 664.0
+margin_top = 1.0
+margin_right = 720.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 9 )
+text = "100%"
+
+[node name="music" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 126.0
+margin_right = 720.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 9 )
+text = "Music"
+
+[node name="son_music" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son"]
+margin_top = 164.0
+margin_right = 720.0
+margin_bottom = 194.0
+
+[node name="texturemusic" type="TextureRect" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+texture = SubResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="music" type="HSlider" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_left = 34.0
+margin_top = 7.0
+margin_right = 660.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+ticks_on_borders = true
+
+[node name="percent" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/son/son_music"]
+margin_left = 664.0
+margin_top = 1.0
+margin_right = 720.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 9 )
+text = "100%"
+
+[node name="controles" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+visible = false
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_right = 720.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 9 )
+text = "Control settings"
+uppercase = true
+
+[node name="music" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 48.0
+margin_right = 720.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 9 )
+text = "Key-bindings"
+
+[node name="touches" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 86.0
+margin_right = 720.0
+margin_bottom = 114.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches"]
+margin_right = 53.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Left :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches"]
+margin_left = 57.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Q"
+
+[node name="touches2" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 124.0
+margin_right = 720.0
+margin_bottom = 152.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches2"]
+margin_right = 72.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Right :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches2"]
+margin_left = 76.0
+margin_right = 94.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "D"
+
+[node name="touches3" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 162.0
+margin_right = 720.0
+margin_bottom = 190.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches3"]
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Jump :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches3"]
+margin_left = 79.0
+margin_right = 207.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Z or Espace"
+
+[node name="touches4" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 200.0
+margin_right = 720.0
+margin_bottom = 228.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches4"]
+margin_right = 84.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Punch :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches4"]
+margin_left = 88.0
+margin_right = 261.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Mouse Button 1"
+
+[node name="touches5" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 238.0
+margin_right = 720.0
+margin_bottom = 266.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches5"]
+margin_right = 58.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Kick :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches5"]
+margin_left = 62.0
+margin_right = 240.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Mouse Button 2"
+
+[node name="touches6" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 276.0
+margin_right = 720.0
+margin_bottom = 304.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches6"]
+margin_right = 85.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Grab item :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches6"]
+margin_left = 89.0
+margin_right = 155.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "E"
+
+[node name="touches7" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles"]
+margin_top = 276.0
+margin_right = 720.0
+margin_bottom = 304.0
+
+[node name="son3" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches7"]
+margin_right = 85.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Emote :"
+
+[node name="son2" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/controles/touches7"]
+margin_left = 89.0
+margin_right = 155.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Alt F4"
+
+[node name="jeu" type="VBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu"]
+visible = false
+margin_right = 720.0
+margin_bottom = 330.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Volume" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_right = 720.0
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 9 )
+text = "Game settings"
+uppercase = true
+
+[node name="anim" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 48.0
+margin_right = 720.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 9 )
+text = "Desactivate animations"
+
+[node name="animToggle" type="CheckButton" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 86.0
+margin_right = 76.0
+margin_bottom = 126.0
+size_flags_horizontal = 2
+custom_constants/check_vadjust = 0
+
+[node name="pleinecran" type="Label" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 136.0
+margin_right = 720.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 9 )
+text = "Full screen mode"
+
+[node name="ecranToggle" type="CheckButton" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/scrollContainer/HBoxContainer/listMenu/jeu"]
+margin_top = 174.0
+margin_right = 76.0
+margin_bottom = 214.0
+size_flags_horizontal = 2
+
+[node name="BottomButtons" type="HBoxContainer" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content"]
+margin_top = 334.0
+margin_right = 720.0
+margin_bottom = 360.0
+alignment = 2
+
+[node name="apply" type="Button" parent="settings/VBoxContainer/main/settingsContainer/AsideDetails/MarginContainer/content/BottomButtons"]
+margin_left = 626.0
+margin_right = 720.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 13 )
+text = "  APPLY  "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="settings"]
+autoplay = "fade in"

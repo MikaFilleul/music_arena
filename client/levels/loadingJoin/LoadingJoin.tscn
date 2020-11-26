@@ -1,0 +1,295 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://levels/loadingJoin/loadingJoin.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/addFriendsMulti/assets/backgdadd.png" type="Texture" id=3]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=4]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=5]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=6]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=7]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=8]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=9]
+[ext_resource path="res://levels/commons/themes/testTheme.tres" type="Theme" id=10]
+[ext_resource path="res://levels/commons/themes/panelThemeBlack.tres" type="StyleBox" id=11]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBold.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBoldItalic.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://levels/mainMenu/assets/mainMenuCharacters.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_char = 1
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 12 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.50732
+margin_right = 576.0
+margin_bottom = 1001.51
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 130
+
+[node name="header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 4
+
+[node name="Multiplayer Selection" type="Label" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 984.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 7 )
+text = "Waiting for the drums"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 400.0
+custom_constants/separation = 15
+
+[node name="create" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main"]
+margin_right = 984.0
+margin_bottom = 65.0
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create"]
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 65 )
+theme = ExtResource( 10 )
+custom_styles/panel = ExtResource( 11 )
+
+[node name="infosContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 974.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer/HBoxContainer"]
+margin_top = 7.0
+margin_right = 249.0
+margin_bottom = 38.0
+size_flags_horizontal = 5
+text = "You have joined the party:"
+
+[node name="labelID" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer/HBoxContainer"]
+margin_left = 253.0
+margin_top = 7.0
+margin_right = 344.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.929412, 0.168627, 0.494118, 1 )
+text = "#partyID"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer/HBoxContainer"]
+margin_left = 348.0
+margin_top = 8.0
+margin_right = 685.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "   --   you're waiting for the air-blast"
+
+[node name="solo" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main"]
+margin_top = 80.0
+margin_right = 984.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="waitingContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo"]
+margin_right = 984.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer"]
+margin_right = 984.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer"]
+margin_left = 342.0
+margin_top = 210.0
+margin_right = 642.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 90 )
+size_flags_horizontal = 4
+size_flags_vertical = 9
+theme = ExtResource( 10 )
+custom_styles/panel = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 5
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 5
+
+[node name="didYouKNOW" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer/Panel/MarginContainer"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 290.0
+margin_bottom = 85.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer/Panel/MarginContainer/didYouKNOW"]
+margin_right = 280.0
+margin_bottom = 31.0
+size_flags_vertical = 5
+custom_colors/font_color = Color( 0.666667, 0.172549, 0.776471, 1 )
+text = "DID YOU KNOW?"
+align = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo/waitingContainer/Panel/MarginContainer/didYouKNOW"]
+margin_top = 35.0
+margin_right = 280.0
+margin_bottom = 80.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 11 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]when the night comes, it's all dark[/center]"
+tab_size = 5
+text = "when the night comes, it's all dark"

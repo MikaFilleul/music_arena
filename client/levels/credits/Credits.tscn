@@ -1,0 +1,459 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://levels/credits/credits.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=3]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=4]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=5]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=6]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=7]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=8]
+[ext_resource path="res://levels/commons/themes/buttonAsideTheme.tres" type="Theme" id=9]
+[ext_resource path="res://levels/commons/themes/mostPlayedCharaName.tres" type="Theme" id=10]
+[ext_resource path="res://levels/commons/themes/scrollContainer.tres" type="Theme" id=11]
+[ext_resource path="res://levels/profile/assets/iconstmp.png" type="Texture" id=12]
+[ext_resource path="res://levels/commons/themes/titleTrophies.tres" type="Theme" id=13]
+[ext_resource path="res://levels/commons/themes/labelSkillFont.tres" type="Theme" id=14]
+[ext_resource path="res://levels/commons/anim/sceneFadeIn.tres" type="Animation" id=15]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id=2]
+Panel/styles/panel = SubResource( 1 )
+Panel/styles/panelf = null
+Panel/styles/panelnc = null
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 5.0
+
+[sub_resource type="Theme" id=4]
+Panel/styles/panel = SubResource( 3 )
+Panel/styles/panelf = null
+Panel/styles/panelnc = null
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 130
+
+[node name="header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="Credits" type="Label" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 130.0
+margin_right = 854.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Credits"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="main" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 20
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="profileContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/main"]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 984.0
+margin_bottom = 430.0
+
+[node name="asidePanel" type="Panel" parent="MarginContainer/VBoxContainer/main/profileContainer"]
+margin_right = 180.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 180, 0 )
+theme = SubResource( 2 )
+
+[node name="listButton" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/asidePanel"]
+margin_right = 181.0
+margin_bottom = 395.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="memoButtons" type="Button" parent="MarginContainer/VBoxContainer/main/profileContainer/asidePanel/listButton"]
+margin_right = 181.0
+margin_bottom = 42.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 9 )
+text = "TRICKS & TRICKS"
+
+[node name="aboutUsButton" type="Button" parent="MarginContainer/VBoxContainer/main/profileContainer/asidePanel/listButton"]
+margin_top = 46.0
+margin_right = 181.0
+margin_bottom = 88.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 9 )
+text = "ABOUT US"
+
+[node name="maininfoPanel" type="Panel" parent="MarginContainer/VBoxContainer/main/profileContainer"]
+margin_left = 184.0
+margin_right = 944.0
+margin_bottom = 410.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="maininfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 730.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+custom_constants/separation = 32
+
+[node name="memos" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo"]
+margin_right = 700.0
+margin_bottom = 350.0
+size_flags_vertical = 3
+
+[node name="memoTitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos"]
+margin_right = 700.0
+margin_bottom = 51.0
+theme = ExtResource( 10 )
+text = "Tips and tricks"
+
+[node name="memosContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos"]
+margin_top = 55.0
+margin_right = 700.0
+margin_bottom = 350.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+scroll_horizontal_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer"]
+margin_right = 696.0
+margin_bottom = 555.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer"]
+margin_right = 686.0
+margin_bottom = 555.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_right = 686.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="subtitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 686.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource( 13 )
+text = "  BASIC COMMANDS"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_top = 55.0
+margin_right = 686.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+tab_size = 5
+text = "You can move your character with  Q (left) and D (right) on the differents islands. With the Z or the space command, you can jump and move around the map, discovering the different fight zones. 
+
+But be careful! The map losts some island by the time, if you fall the game is over.
+
+You can find these commands in the option menu in-game, by using Escape"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 686.0
+margin_bottom = 230.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="subtitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 686.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource( 13 )
+text = "  ADVANCED COMMANDS"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_top = 245.0
+margin_right = 686.0
+margin_bottom = 365.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+tab_size = 5
+text = "The more the percentage of your character is high, the more he's susceptible to be kick out the island. 
+
+You can find items on the map, which can heal you: the hotdog and the beer (warning: it doesn't work in real life)
+
+You can use the falling islands to kick a oppenent out of the game, with a good timing."
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_top = 380.0
+margin_right = 686.0
+margin_bottom = 420.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="subtitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 686.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource( 13 )
+text = "  TIPS"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/memos/memosContainer/MarginContainer/VBoxContainer"]
+margin_top = 435.0
+margin_right = 686.0
+margin_bottom = 555.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+tab_size = 5
+text = "You can push your opponents in the void and hope they crash out of the living zone ;)"
+
+[node name="aboutUs" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo"]
+visible = false
+margin_right = 700.0
+margin_bottom = 350.0
+size_flags_vertical = 3
+
+[node name="creditsTitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs"]
+margin_right = 700.0
+margin_bottom = 51.0
+theme = ExtResource( 10 )
+text = "About us"
+
+[node name="trophiesContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs"]
+margin_top = 55.0
+margin_right = 700.0
+margin_bottom = 350.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer"]
+margin_right = 700.0
+margin_bottom = 295.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer/MarginContainer"]
+margin_right = 690.0
+margin_bottom = 295.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer/MarginContainer/VBoxContainer2"]
+margin_right = 690.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="subtitle" type="Label" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 690.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource( 13 )
+text = "WHO WE ARE?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/main/profileContainer/maininfoPanel/MarginContainer/maininfo/aboutUs/trophiesContainer/MarginContainer/VBoxContainer2"]
+margin_top = 55.0
+margin_right = 690.0
+margin_bottom = 295.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+tab_size = 5
+text = "Prepare for trouble! And make it double! To protect the world from devastation! To unite all peoples within our nation! To denounce the evils of truth and love!  To extend our reach to the stars above!
+Adonis!
+Thomas S!
+Elie!
+Timothée!
+Valentine!
+Morgane!
+Thomas D!
+Gaëlle!
+Lucas!
+Mika!
+Team Rocket blasts off at the speed of light! Surrender now, or prepare to fight!
+
+Meowth! That's right!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+autoplay = "sceneFadeIn"
+anims/sceneFadeIn = ExtResource( 15 )

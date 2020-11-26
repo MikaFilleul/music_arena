@@ -1,0 +1,272 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://levels/loadingMaster/loadingMaster.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/addFriendsMulti/assets/backgdadd.png" type="Texture" id=3]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=4]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=5]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=6]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=7]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=8]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=9]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBold.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://levels/commons/themes/testTheme.tres" type="Theme" id=11]
+[ext_resource path="res://levels/commons/themes/multiModeButton.tres" type="Theme" id=12]
+[ext_resource path="res://levels/mainMenu/assets/letsplay.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+extra_spacing_char = 1
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+extra_spacing_char = 1
+font_data = ExtResource( 10 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 576.0
+margin_bottom = 1000.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 130
+
+[node name="header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 4
+
+[node name="Multiplayer Selection" type="Label" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 984.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 7 )
+text = "Launch the party"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 400.0
+custom_constants/separation = 15
+
+[node name="create" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main"]
+margin_right = 984.0
+margin_bottom = 101.0
+
+[node name="title1" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create"]
+margin_right = 984.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "Party's ID:"
+uppercase = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create"]
+margin_top = 36.0
+margin_right = 984.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 0, 65 )
+theme = ExtResource( 11 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="infosContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 974.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer/HBoxContainer"]
+margin_top = 7.0
+margin_right = 304.0
+margin_bottom = 38.0
+size_flags_horizontal = 5
+text = "You are the master of the party:"
+
+[node name="labelID" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main/create/Panel/infosContainer/HBoxContainer"]
+margin_left = 308.0
+margin_top = 7.0
+margin_right = 399.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.929412, 0.168627, 0.494118, 1 )
+text = "#partyID"
+
+[node name="infos" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Main"]
+margin_top = 116.0
+margin_right = 984.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.666667, 0.172549, 0.776471, 1 )
+text = "If all your teammates have join, you can press play!"
+align = 1
+valign = 1
+
+[node name="solo" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Main"]
+margin_left = 342.0
+margin_top = 152.0
+margin_right = 642.0
+margin_bottom = 380.0
+size_flags_horizontal = 4
+size_flags_vertical = 11
+custom_constants/separation = 50
+
+[node name="playButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo"]
+visible = false
+margin_top = 253.0
+margin_right = 115.0
+margin_bottom = 299.0
+size_flags_horizontal = 5
+size_flags_vertical = 8
+theme = ExtResource( 12 )
+text = "     PLAY     "
+
+[node name="letsPlay" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/Main/solo"]
+margin_top = 128.0
+margin_right = 300.0
+margin_bottom = 228.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 5
+size_flags_vertical = 8
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 5

@@ -1,0 +1,472 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://levels/selectChar/characterSelection.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/selectChar/assets/deco1.png" type="Texture" id=3]
+[ext_resource path="res://levels/selectChar/assets/deco2.png" type="Texture" id=4]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=5]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=6]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=7]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=8]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=9]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=10]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-SemiBold.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://levels/commons/themes/labelSkillFont.tres" type="Theme" id=12]
+[ext_resource path="res://levels/selectChar/assets/jauge.png" type="Texture" id=13]
+[ext_resource path="res://levels/selectChar/assets/jaugefill.png" type="Texture" id=14]
+[ext_resource path="res://levels/commons/scripts/gridContainer.gd" type="Script" id=15]
+[ext_resource path="res://levels/selectChar/assets/lullaby.png" type="Texture" id=16]
+[ext_resource path="res://levels/selectChar/assets/vegapunkic.png" type="Texture" id=17]
+[ext_resource path="res://levels/selectChar/assets/electrorobot_v2ptit.png" type="Texture" id=18]
+[ext_resource path="res://levels/mainMenu/assets/letsplay.png" type="Texture" id=19]
+[ext_resource path="res://levels/commons/scripts/buttonHover.gd" type="Script" id=20]
+
+[sub_resource type="AnimatedTexture" id=1]
+
+[sub_resource type="StreamTexture" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 19
+font_data = ExtResource( 11 )
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/mrd.png-5f885019dc3548fc83975a224ae52d2e.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/angela1.png-9dd5a6bf8bb9f4e06a3378c6f3a79344.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/reagge.png-42bf31bad67e6c62ad47b4f0d1157ce8.stex"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fond" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="deco1" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="deco3" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 7
+
+[node name="deco2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_top = -573.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 110
+alignment = 1
+
+[node name="header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 4
+
+[node name="Multiplayer Selection" type="Label" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 130.0
+margin_right = 854.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+text = "Character Selection"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="MarginContainer/VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="marginSelectContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 110.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 35
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 25
+
+[node name="container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer"]
+margin_left = 40.0
+margin_top = 35.0
+margin_right = 984.0
+margin_bottom = 465.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="character" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container"]
+margin_right = 462.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="marginCharRight" type="MarginContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character"]
+margin_right = 462.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 80
+
+[node name="verticalAlignment" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight"]
+margin_right = 382.0
+margin_bottom = 430.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment"]
+margin_right = 382.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="character" type="TextureRect" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/VBoxContainer"]
+margin_right = 382.0
+margin_bottom = 217.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 7
+size_flags_vertical = 3
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="characterSprite" type="TextureRect" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment"]
+visible = false
+margin_top = 113.0
+margin_right = 382.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="charaName" type="Label" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment"]
+margin_top = 227.0
+margin_right = 382.0
+margin_bottom = 251.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Character Name"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment"]
+margin_top = 261.0
+margin_right = 382.0
+margin_bottom = 261.0
+
+[node name="marginSkills" type="MarginContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment"]
+margin_top = 271.0
+margin_right = 382.0
+margin_bottom = 430.0
+custom_constants/margin_right = 80
+custom_constants/margin_left = 80
+
+[node name="skills" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills"]
+margin_left = 80.0
+margin_right = 302.0
+margin_bottom = 159.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 1
+alignment = 1
+
+[node name="skill1" type="Label" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_right = 222.0
+margin_bottom = 18.0
+size_flags_vertical = 6
+theme = ExtResource( 12 )
+text = "dance"
+uppercase = true
+
+[node name="skillBar1" type="TextureProgress" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 19.0
+margin_right = 222.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+value = 50.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+
+[node name="skill2" type="Label" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 40.0
+margin_right = 222.0
+margin_bottom = 58.0
+theme = ExtResource( 12 )
+text = "musicality"
+uppercase = true
+
+[node name="skillBar2" type="TextureProgress" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 59.0
+margin_right = 222.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+value = 20.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+
+[node name="skill3" type="Label" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 80.0
+margin_right = 222.0
+margin_bottom = 98.0
+theme = ExtResource( 12 )
+text = "groovy"
+uppercase = true
+
+[node name="skillBar3" type="TextureProgress" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 99.0
+margin_right = 222.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+value = 20.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+
+[node name="skill4" type="Label" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 120.0
+margin_right = 222.0
+margin_bottom = 138.0
+theme = ExtResource( 12 )
+text = "bpm"
+uppercase = true
+
+[node name="skillBar4" type="TextureProgress" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/character/marginCharRight/verticalAlignment/marginSkills/skills"]
+margin_top = 139.0
+margin_right = 222.0
+margin_bottom = 159.0
+size_flags_horizontal = 3
+value = 20.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+
+[node name="selection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container"]
+margin_left = 482.0
+margin_right = 944.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="charListContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection"]
+margin_right = 462.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer"]
+margin_right = 462.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer"]
+margin_right = 462.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 4
+script = ExtResource( 15 )
+
+[node name="char1" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 4
+
+[node name="char2" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+margin_left = 10.0
+margin_right = 10.0
+texture_normal = SubResource( 4 )
+expand = true
+stretch_mode = 4
+
+[node name="char3" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+margin_left = 20.0
+margin_right = 20.0
+texture_normal = SubResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="char4" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+margin_left = 30.0
+margin_right = 30.0
+texture_normal = SubResource( 6 )
+expand = true
+stretch_mode = 4
+
+[node name="char5" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+margin_top = 10.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 4
+
+[node name="char6" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/ScrollContainer/GridContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+texture_normal = ExtResource( 18 )
+expand = true
+stretch_mode = 4
+
+[node name="buttonPlayMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer"]
+margin_top = 270.0
+margin_right = 462.0
+margin_bottom = 430.0
+custom_constants/margin_right = 80
+custom_constants/margin_top = 20
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 20
+
+[node name="playButton" type="TextureButton" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/buttonPlayMargin"]
+margin_left = 80.0
+margin_top = 20.0
+margin_right = 382.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 302, 120 )
+rect_pivot_offset = Vector2( 158.471, 63.3141 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 19 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 20 )
+
+[node name="Tween" type="Tween" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/buttonPlayMargin/playButton"]
+
+[node name="ouibon" type="Button" parent="MarginContainer/VBoxContainer/marginSelectContainer/container/selection/charListContainer/buttonPlayMargin"]
+visible = false
+margin_left = 80.0
+margin_top = 20.0
+margin_right = 382.0
+margin_bottom = 140.0
+text = "PLAY"

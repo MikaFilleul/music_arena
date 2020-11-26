@@ -1,0 +1,967 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://levels/endGame/endGame.gd" type="Script" id=1]
+[ext_resource path="res://levels/commons/assets/fondmain.png" type="Texture" id=2]
+[ext_resource path="res://levels/endGame/assets/fond.png" type="Texture" id=3]
+[ext_resource path="res://levels/endGame/assets/lullabywin.png" type="Texture" id=4]
+[ext_resource path="res://levels/endGame/assets/discowin.png" type="Texture" id=5]
+[ext_resource path="res://levels/endGame/assets/angelawin.png" type="Texture" id=6]
+[ext_resource path="res://levels/commons/assets/mainTitle.png" type="Texture" id=7]
+[ext_resource path="res://levels/commons/assets/backbutton.png" type="Texture" id=8]
+[ext_resource path="res://levels/commons/assets/backbuttonhover.png" type="Texture" id=9]
+[ext_resource path="res://levels/commons/themes/mainTitleTheme.tres" type="Theme" id=10]
+[ext_resource path="res://levels/commons/assets/options.png" type="Texture" id=11]
+[ext_resource path="res://levels/commons/assets/optionshover.png" type="Texture" id=12]
+[ext_resource path="res://levels/commons/themes/panelThemeBlack.tres" type="StyleBox" id=13]
+[ext_resource path="res://levels/commons/themes/endgameLabel.tres" type="Theme" id=14]
+[ext_resource path="res://levels/commons/themes/endgameRankLabel.tres" type="Theme" id=15]
+[ext_resource path="res://levels/commons/fonts/montserrat/Montserrat-Regular.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://levels/endGame/assets/robotwin.png" type="Texture" id=17]
+[ext_resource path="res://levels/endGame/assets/reggaewin.png" type="Texture" id=18]
+[ext_resource path="res://levels/endGame/assets/metalwin.png" type="Texture" id=19]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 16 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 22
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 22
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
+font_data = ExtResource( 16 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="lullabywin" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="discowin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="angelawin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="weedwin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 1
+
+[node name="robotwin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 1
+
+[node name="metalwin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 1
+
+[node name="defaultwin" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 130
+
+[node name="header" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+size_flags_horizontal = 11
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/header"]
+margin_right = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/header/Control"]
+anchor_right = 1.0
+margin_bottom = 120.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+
+[node name="headerContainer" type="MarginContainer" parent="VBoxContainer/header/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 170
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/header/Control/headerContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 854.0
+margin_bottom = 85.0
+custom_constants/separation = 50
+
+[node name="back" type="TextureButton" parent="VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 65.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 4
+
+[node name="Multiplayer Selection" type="Label" parent="VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+margin_left = 130.0
+margin_right = 834.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 10 )
+text = "the show must go on"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="titleMargins" type="MarginContainer" parent="VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 699.0
+margin_right = 999.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="TextureButton" parent="VBoxContainer/header/Control/headerContainer/HBoxContainer"]
+visible = false
+margin_left = 904.0
+margin_right = 984.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 80, 65 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 450.0
+custom_constants/separation = 0
+
+[node name="container" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_left = 200
+
+[node name="endGameInfos" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/container"]
+margin_left = 200.0
+margin_right = 1004.0
+margin_bottom = 430.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_constants/separation = 15
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos"]
+margin_left = 402.0
+margin_right = 402.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = ExtResource( 13 )
+
+[node name="rankinContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rankingInfos" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 257.0
+margin_bottom = 133.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="yourplace" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer/rankingInfos"]
+margin_right = 237.0
+margin_bottom = 38.0
+theme = ExtResource( 14 )
+text = "YOUR RANK IS"
+align = 1
+valign = 1
+
+[node name="ranking" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer/rankingInfos"]
+margin_top = 42.0
+margin_right = 237.0
+margin_bottom = 113.0
+alignment = 1
+
+[node name="playerrank" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer/rankingInfos/ranking"]
+margin_left = 25.0
+margin_right = 99.0
+margin_bottom = 71.0
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0.960784, 0.772549, 0.356863, 1 )
+text = "xx"
+
+[node name="separation" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer/rankingInfos/ranking"]
+margin_left = 103.0
+margin_right = 134.0
+margin_bottom = 71.0
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0.921569, 0.168627, 0.498039, 1 )
+text = "/"
+
+[node name="numberofplayers" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/Panel/rankinContainer/rankingInfos/ranking"]
+margin_left = 138.0
+margin_right = 212.0
+margin_bottom = 71.0
+theme = ExtResource( 15 )
+custom_colors/font_color = Color( 0.921569, 0.168627, 0.498039, 1 )
+text = "xx"
+
+[node name="endMessage" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos"]
+margin_top = 15.0
+margin_right = 804.0
+margin_bottom = 53.0
+theme = ExtResource( 14 )
+text = "END MESSAGE"
+align = 1
+valign = 1
+
+[node name="kills" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos"]
+margin_top = 68.0
+margin_right = 804.0
+margin_bottom = 106.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+alignment = 1
+
+[node name="killsTxt" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/kills"]
+margin_left = 324.0
+margin_right = 433.0
+margin_bottom = 38.0
+theme = ExtResource( 14 )
+text = "KILLS: "
+align = 1
+valign = 1
+
+[node name="nbKills" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/container/endGameInfos/kills"]
+margin_left = 437.0
+margin_right = 480.0
+margin_bottom = 38.0
+theme = ExtResource( 14 )
+custom_colors/font_color = Color( 0.960784, 0.772549, 0.356863, 1 )
+text = "XX"
+align = 1
+valign = 1
+
+[node name="main" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_right = 984.0
+margin_bottom = 430.0
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="maininfo" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 964.0
+margin_bottom = 410.0
+size_flags_horizontal = 3
+custom_constants/separation = 32
+
+[node name="statistiques" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo"]
+margin_right = 944.0
+margin_bottom = 390.0
+size_flags_vertical = 3
+
+[node name="top" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques"]
+margin_right = 944.0
+margin_bottom = 230.0
+size_flags_vertical = 9
+custom_constants/separation = 20
+alignment = 1
+
+[node name="2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top"]
+margin_left = 227.0
+margin_top = 50.0
+margin_right = 377.0
+margin_bottom = 230.0
+size_flags_vertical = 8
+
+[node name="second" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/2"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_vertical = 8
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="pseudo3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/2"]
+margin_top = 154.0
+margin_right = 150.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+text = "Bliss_full"
+align = 1
+
+[node name="1" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top"]
+margin_left = 397.0
+margin_right = 597.0
+margin_bottom = 230.0
+
+[node name="first" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/1"]
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="pseudo" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/1"]
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 230.0
+custom_fonts/font = SubResource( 2 )
+text = "Frimousse67"
+align = 1
+
+[node name="3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top"]
+margin_left = 617.0
+margin_top = 100.0
+margin_right = 717.0
+margin_bottom = 230.0
+size_flags_vertical = 8
+
+[node name="third" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/3"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_vertical = 8
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="pseudo2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/top/3"]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 2 )
+text = "Azm0t"
+align = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques"]
+margin_top = 234.0
+margin_right = 944.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 5 )
+text = "Statistiques"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques"]
+margin_top = 288.0
+margin_right = 944.0
+margin_bottom = 390.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer"]
+margin_right = 944.0
+margin_bottom = 508.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="pseudo" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2"]
+margin_right = 230.0
+margin_bottom = 508.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Date" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_right = 230.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 6 )
+text = "Pseudo"
+
+[node name="Date2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 38.0
+margin_right = 230.0
+margin_bottom = 52.0
+text = "Lolilol (vous)"
+
+[node name="Date3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 62.0
+margin_right = 230.0
+margin_bottom = 76.0
+text = "Frimousse67"
+
+[node name="Date4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 86.0
+margin_right = 230.0
+margin_bottom = 100.0
+text = "Bliss_full"
+
+[node name="Date5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 110.0
+margin_right = 230.0
+margin_bottom = 124.0
+text = "Azm0t"
+
+[node name="Date6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 134.0
+margin_right = 230.0
+margin_bottom = 148.0
+text = "Roger"
+
+[node name="Date7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 158.0
+margin_right = 230.0
+margin_bottom = 172.0
+text = "Emmy__ssx"
+
+[node name="Date8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 182.0
+margin_right = 230.0
+margin_bottom = 196.0
+text = "Upi"
+
+[node name="Date9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 206.0
+margin_right = 230.0
+margin_bottom = 220.0
+text = "Canopeks"
+
+[node name="Date10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 230.0
+margin_right = 230.0
+margin_bottom = 244.0
+text = "CEO of Cring"
+
+[node name="Date11" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 254.0
+margin_right = 230.0
+margin_bottom = 268.0
+text = "Valeris"
+
+[node name="Date12" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 278.0
+margin_right = 230.0
+margin_bottom = 292.0
+text = "Mikatchu"
+
+[node name="Date13" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 302.0
+margin_right = 230.0
+margin_bottom = 316.0
+text = "Elie"
+
+[node name="Date14" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 326.0
+margin_right = 230.0
+margin_bottom = 340.0
+text = "Thomas"
+
+[node name="Date15" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 350.0
+margin_right = 230.0
+margin_bottom = 364.0
+text = "Ryshee"
+
+[node name="Date16" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 374.0
+margin_right = 230.0
+margin_bottom = 388.0
+text = "xx_sasuke_xx"
+
+[node name="Date17" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 398.0
+margin_right = 230.0
+margin_bottom = 412.0
+text = "G@mer"
+
+[node name="Date18" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 422.0
+margin_right = 230.0
+margin_bottom = 436.0
+text = "G@mer18"
+
+[node name="Date19" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/pseudo"]
+margin_top = 446.0
+margin_right = 230.0
+margin_bottom = 460.0
+text = "G@mer2"
+
+[node name="perso" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2"]
+margin_left = 234.0
+margin_right = 464.0
+margin_bottom = 508.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Date" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_right = 230.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "Personnage"
+
+[node name="Date2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 38.0
+margin_right = 230.0
+margin_bottom = 52.0
+text = "Monsieur Disco"
+
+[node name="Date3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 62.0
+margin_right = 230.0
+margin_bottom = 76.0
+text = "Casse Noisette"
+
+[node name="Date4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 86.0
+margin_right = 230.0
+margin_bottom = 100.0
+text = "Monsieur Disco"
+
+[node name="Date5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 110.0
+margin_right = 230.0
+margin_bottom = 124.0
+text = "Weed Man"
+
+[node name="Date6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 134.0
+margin_right = 230.0
+margin_bottom = 148.0
+text = "Maestro"
+
+[node name="Date7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 158.0
+margin_right = 230.0
+margin_bottom = 172.0
+text = "Hell"
+
+[node name="Date8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 182.0
+margin_right = 230.0
+margin_bottom = 196.0
+text = "Rave Age"
+
+[node name="Date9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 206.0
+margin_right = 230.0
+margin_bottom = 220.0
+text = "Hell"
+
+[node name="Date10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 230.0
+margin_right = 230.0
+margin_bottom = 244.0
+text = "Monsieur Disco"
+
+[node name="Date11" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 254.0
+margin_right = 230.0
+margin_bottom = 268.0
+text = "King Musica"
+
+[node name="Date12" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 278.0
+margin_right = 230.0
+margin_bottom = 292.0
+text = "Doremi"
+
+[node name="Date13" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 302.0
+margin_right = 230.0
+margin_bottom = 316.0
+text = "Mila"
+
+[node name="Date14" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 326.0
+margin_right = 230.0
+margin_bottom = 340.0
+text = "Maestro"
+
+[node name="Date15" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 350.0
+margin_right = 230.0
+margin_bottom = 364.0
+text = "Dj Anaconda"
+
+[node name="Date16" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 374.0
+margin_right = 230.0
+margin_bottom = 388.0
+text = "Harry Drum"
+
+[node name="Date17" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 398.0
+margin_right = 230.0
+margin_bottom = 412.0
+text = "Monsieur Disco"
+
+[node name="Date18" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 422.0
+margin_right = 230.0
+margin_bottom = 436.0
+text = "Lyrica"
+
+[node name="Date19" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/perso"]
+margin_top = 446.0
+margin_right = 230.0
+margin_bottom = 460.0
+text = "Fermier Paillard"
+
+[node name="rang" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2"]
+margin_left = 468.0
+margin_right = 698.0
+margin_bottom = 508.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Date" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_right = 230.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 8 )
+text = "Rang"
+
+[node name="Date2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 38.0
+margin_right = 230.0
+margin_bottom = 52.0
+text = "6/20"
+
+[node name="Date3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 62.0
+margin_right = 230.0
+margin_bottom = 76.0
+text = "1/20"
+
+[node name="Date4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 86.0
+margin_right = 230.0
+margin_bottom = 100.0
+text = "2/33"
+
+[node name="Date5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 110.0
+margin_right = 230.0
+margin_bottom = 124.0
+text = "3/20"
+
+[node name="Date6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 134.0
+margin_right = 230.0
+margin_bottom = 148.0
+text = "4/20"
+
+[node name="Date7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 158.0
+margin_right = 230.0
+margin_bottom = 172.0
+text = "5/20"
+
+[node name="Date8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 182.0
+margin_right = 230.0
+margin_bottom = 196.0
+text = "7/20"
+
+[node name="Date9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 206.0
+margin_right = 230.0
+margin_bottom = 220.0
+text = "8/20"
+
+[node name="Date10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 230.0
+margin_right = 230.0
+margin_bottom = 244.0
+text = "9/20"
+
+[node name="Date11" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 254.0
+margin_right = 230.0
+margin_bottom = 268.0
+text = "10/20"
+
+[node name="Date12" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 278.0
+margin_right = 230.0
+margin_bottom = 292.0
+text = "11/20"
+
+[node name="Date13" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 302.0
+margin_right = 230.0
+margin_bottom = 316.0
+text = "12/20"
+
+[node name="Date14" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 326.0
+margin_right = 230.0
+margin_bottom = 340.0
+text = "13/20"
+
+[node name="Date15" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 350.0
+margin_right = 230.0
+margin_bottom = 364.0
+text = "14/20"
+
+[node name="Date16" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 374.0
+margin_right = 230.0
+margin_bottom = 388.0
+text = "15/20"
+
+[node name="Date17" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 398.0
+margin_right = 230.0
+margin_bottom = 412.0
+text = "16/20"
+
+[node name="Date18" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 422.0
+margin_right = 230.0
+margin_bottom = 436.0
+text = "17/20"
+
+[node name="Date19" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 446.0
+margin_right = 230.0
+margin_bottom = 460.0
+text = "18/20"
+
+[node name="Date20" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 470.0
+margin_right = 230.0
+margin_bottom = 484.0
+text = "19/20"
+
+[node name="Date21" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/rang"]
+margin_top = 494.0
+margin_right = 230.0
+margin_bottom = 508.0
+text = "20/20"
+
+[node name="elimination" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2"]
+margin_left = 702.0
+margin_right = 932.0
+margin_bottom = 508.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Date" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_right = 230.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "Eliminations"
+
+[node name="Date2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 38.0
+margin_right = 230.0
+margin_bottom = 52.0
+text = "3"
+
+[node name="Date3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 62.0
+margin_right = 230.0
+margin_bottom = 76.0
+text = "15"
+
+[node name="Date4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 86.0
+margin_right = 230.0
+margin_bottom = 100.0
+text = "8"
+
+[node name="Date5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 110.0
+margin_right = 230.0
+margin_bottom = 124.0
+text = "9"
+
+[node name="Date6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 134.0
+margin_right = 230.0
+margin_bottom = 148.0
+text = "2"
+
+[node name="Date7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 158.0
+margin_right = 230.0
+margin_bottom = 172.0
+text = "7"
+
+[node name="Date8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 182.0
+margin_right = 230.0
+margin_bottom = 196.0
+text = "15"
+
+[node name="Date9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 206.0
+margin_right = 230.0
+margin_bottom = 220.0
+text = "15"
+
+[node name="Date10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 230.0
+margin_right = 230.0
+margin_bottom = 244.0
+text = "15"
+
+[node name="Date11" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 254.0
+margin_right = 230.0
+margin_bottom = 268.0
+text = "15"
+
+[node name="Date12" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 278.0
+margin_right = 230.0
+margin_bottom = 292.0
+text = "15"
+
+[node name="Date13" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 302.0
+margin_right = 230.0
+margin_bottom = 316.0
+text = "15"
+
+[node name="Date14" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 326.0
+margin_right = 230.0
+margin_bottom = 340.0
+text = "15"
+
+[node name="Date15" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 350.0
+margin_right = 230.0
+margin_bottom = 364.0
+text = "15"
+
+[node name="Date16" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 374.0
+margin_right = 230.0
+margin_bottom = 388.0
+text = "15"
+
+[node name="Date17" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 398.0
+margin_right = 230.0
+margin_bottom = 412.0
+text = "15"
+
+[node name="Date18" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/main/maininfo/statistiques/ScrollContainer/HBoxContainer2/elimination"]
+margin_top = 422.0
+margin_right = 230.0
+margin_bottom = 436.0
+text = "15"
+
+[node name="MusicNode" type="Node2D" parent="."]
+position = Vector2( 523.404, 320.504 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="MusicNode"]
+autoplay = true
